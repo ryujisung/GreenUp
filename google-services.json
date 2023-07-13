@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "601453774268",
+    "project_id": "greenup-a1518",
+    "storage_bucket": "greenup-a1518.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601453774268:android:efedab1f7438f7c28857b9",
+        "android_client_info": {
+          "package_name": "com.example.greenup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601453774268-qgivnnhbjoq2o1fnadd33emurf3l7hvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApqZAoIfENdXkhWueos4ZZVvjCRdG4uxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601453774268-qgivnnhbjoq2o1fnadd33emurf3l7hvq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
