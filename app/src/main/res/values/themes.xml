@@ -1,11 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.GreenUp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Base.Theme.GreenUp" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:statusBarColor">#000000</item>
         <item name="colorPrimary">#37A563</item>
+
+        <item name="android:textViewStyle">@style/TextViewStyle</item>
+        <item name="android:buttonStyle">@style/ButtonStyle</item>
+        <item name="editTextStyle">@style/EdittextStyle</item>
     </style>
 
     <style name="Theme.GreenUp" parent="Base.Theme.GreenUp" />
+
+    <style name="TextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/suit_semibold</item>
+        <item name="android:textColor">@color/txtColor</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_round</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/suit_semibold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="EdittextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/txtColor</item>
+        <item name="android:textColorHint">@color/gray2</item>
+        <item name="android:fontFamily">@font/suit_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">19sp</item>
+    </style>
 </resources>
