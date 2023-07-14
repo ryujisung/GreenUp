@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="nickname"
+            type="String" />
+
+        <variable
+            name="email"
+            type="String" />
 
     </data>
 
@@ -12,6 +19,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.my.MyMainActivity">
         <ImageView
+            android:id="@+id/main_img_previous"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_back"
@@ -19,6 +27,109 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_txt_text0"
+            android:textSize="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="마이 프로필"
+            app:layout_constraintTop_toBottomOf="@+id/main_img_previous"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:id="@+id/my_txt_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="김선린"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text0"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/my_txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일"
+            android:textSize="13dp"
+            android:textColor="#5D6760"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_nickname"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_nickname"
+            />
+        <TextView
+            android:id="@+id/my_txt_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="설정"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_email"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/my_txt_noti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마이 프로필"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text1"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/my_txt_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="계정설정"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_noti"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/my_txt_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마이 프로필"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text2"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/my_txt_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마이 프로필"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_edit"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/my_txt_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마이 프로필"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_pw"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/my_txt_text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="고객센터"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_logout"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/my_txt_noti2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공지사항"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text3"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <TextView
+            android:id="@+id/my_txt_cuVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마이 프로필"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_noti2"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

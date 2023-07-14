@@ -83,6 +83,7 @@
                 android:id="@+id/txt_sign1_eror"
                 android:drawableStart="@drawable/error"
                 android:text="이메일을 제대로 입력해주세요"
+                android:visibility="invisible"
 
                 android:drawablePadding="3dp"
                 android:textColor="@color/error"

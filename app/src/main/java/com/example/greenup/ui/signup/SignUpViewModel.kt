@@ -20,12 +20,14 @@ class SignUpViewModel: ViewModel() {
 
     fun sigininAndSignup() : Boolean{
         var k = false
+        Log.d("dd",nickname.value.toString())
+        Log.d("dd","에엥에")
         auth?.createUserWithEmailAndPassword(email.value.toString(),password.value.toString())
             ?.addOnCompleteListener {
                     task ->
 
                 if (task.isSuccessful){
-                    Log.d("dd","ㅇㅇ")
+
                     state.value = State.OK
                     k = true
                 }else if(task.exception?.message.isNullOrEmpty()){
@@ -43,7 +45,8 @@ class SignUpViewModel: ViewModel() {
         }
     }
     fun sigininEmail(){
-        auth?.createUserWithEmailAndPassword(nickname.toString(),password.toString())
+
+        auth?.createUserWithEmailAndPassword(email.value.toString(),password.value.toString())
             ?.addOnCompleteListener {
                     task ->
                 if (task.isSuccessful){
