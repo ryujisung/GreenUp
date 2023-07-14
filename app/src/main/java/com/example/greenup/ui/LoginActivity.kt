@@ -15,7 +15,7 @@ class LoginActivity : AppCompatActivity() {
    // lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_logn)
+        setContentView(R.layout.activity_login)
         val auto = getSharedPreferences("autoskip", MODE_PRIVATE)
         val autoSkipEdit = auto.edit()
         autoSkipEdit.putString("autoskip", "True")
