@@ -7,15 +7,26 @@ import android.os.Handler
 import com.example.greenup.R
 import com.example.greenup.ui.main.MainActivity
 import com.example.greenup.ui.viewpager.ViewPagerActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class IntroActivity : AppCompatActivity() {
-
+    lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)
+        auth = FirebaseAuth.getInstance()
         val shared = getSharedPreferences("autoskip", MODE_PRIVATE)
         val value = shared.getString("autoskip", "False")
-        if(value=="True"){
+        if(auth.currentUser != null){
+            var handler = Handler()
+            handler.postDelayed({
+                var intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+            },1000)
+
+        }
+        else if(value=="True"){
             var handler = Handler()
             handler.postDelayed({
                 var intent = Intent(this, LoginActivity::class.java)

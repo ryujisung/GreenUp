@@ -16,7 +16,7 @@
         >
 
         <ImageView
-            android:id="@+id/img_titleHeader_menu1"
+            android:id="@+id/header_arrow_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -27,39 +27,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="UseAppTint" />
 
-        <ImageView
-            android:id="@+id/img_titleHeader_menu2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:src="@drawable/ic_add"
-            android:tint="#B7B7B7"
-
-            android:layout_marginEnd="10dp"
-
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/img_titleHeader_menu1"
-
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            tools:ignore="UseAppTint" />
-
-        <TextView
-            android:textStyle="bold"
-            android:id="@+id/txt_titleHeader_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="타이틀"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textFontWeight="700"
-
-            android:layout_marginTop="8dp"
-
-            app:layout_constraintTop_toBottomOf="@id/img_titleHeader_menu1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="UnusedAttribute" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
