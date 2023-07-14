@@ -3,6 +3,8 @@
     <style name="Base.Theme.GreenUp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">#000000</item>
+        <item name="colorPrimary">#37A563</item>
     </style>
 
     <style name="Theme.GreenUp" parent="Base.Theme.GreenUp" />

@@ -45,7 +45,7 @@ class CircleIndicator: LinearLayout {
 
         for (i in 0 until count) {
 
-            imageDot.add(ImageView(mContext).apply { setPadding(temp.toInt(), 0, temp.toInt(), 0) })
+            imageDot.add(ImageView(mContext).apply { setPadding(temp.toInt(), 100, temp.toInt(), 0) })
 
             this.addView(imageDot[i])
         }

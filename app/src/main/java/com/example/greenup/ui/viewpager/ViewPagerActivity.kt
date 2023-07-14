@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.greenup.R
+import com.example.greenup.ui.viewpager.SecondFragment
 import com.example.greenup.ui.viewpager.ThirdFragment
 
 class ViewPagerActivity : AppCompatActivity() {
@@ -19,10 +20,26 @@ class ViewPagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_pager)
-
+        val indicatorvi = findViewById<CircleIndicator>(R.id.indicator)
         viewPager = findViewById(R.id.viewPager)
         adapter = ViewPagerAdapter(supportFragmentManager)
         viewPager.adapter = adapter
+        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+            override fun onPageScrollStateChanged(p0: Int) {
+
+            }
+
+            override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
+
+            }
+
+            override fun onPageSelected(p0: Int) {
+                indicatorvi.selectDot(p0)
+            }
+
+        })
+        indicatorvi.createDotPanel(3, R.drawable.square_dot_off, R.drawable.square_dot_on, 0)
+
     }
 
     private inner class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
