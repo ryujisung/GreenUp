@@ -11,6 +11,9 @@
         <variable
             name="email"
             type="String" />
+        <variable
+            name="version"
+            type="String" />
 
     </data>
 
@@ -44,7 +47,7 @@
             android:textSize="17dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:text="김선린"
+            android:text="@={nickname}"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_text0"
             app:layout_constraintStart_toStartOf="parent"
             />
@@ -52,7 +55,7 @@
             android:id="@+id/my_txt_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="이메일"
+            android:text="@={email}"
             android:textSize="13dp"
             android:textColor="#5D6760"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_nickname"
@@ -62,57 +65,68 @@
             android:id="@+id/my_txt_text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:text="설정"
+            android:textSize="13dp"
+            android:textColor="#5D6760"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_email"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_email"
             />
         <TextView
             android:id="@+id/my_txt_noti"
+            android:textSize="17dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="마이 프로필"
+            android:text="알림"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_text1"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_img_previous"
             />
+
         <TextView
             android:id="@+id/my_txt_text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="계정설정"
+            android:textSize="13dp"
+            android:textColor="#5D6760"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_noti"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_img_previous"
             />
         <TextView
             android:id="@+id/my_txt_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="마이 프로필"
+            android:textSize="17dp"
+            android:text="회원 정보 수정"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_text2"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_img_previous"
             />
         <TextView
             android:id="@+id/my_txt_pw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="마이 프로필"
+            android:textSize="17dp"
+            android:text="비밀번호 변경"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_edit"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_img_previous"
             />
         <TextView
             android:id="@+id/my_txt_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="마이 프로필"
+            android:text="로그아웃"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_pw"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_img_previous"
             />
         <TextView
             android:id="@+id/my_txt_text3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:textColor="#5D6760"
             android:text="고객센터"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_logout"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_img_previous"
             />
         <TextView
             android:id="@+id/my_txt_noti2"
@@ -120,15 +134,15 @@
             android:layout_height="wrap_content"
             android:text="공지사항"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_text3"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_img_previous"
             />
         <TextView
             android:id="@+id/my_txt_cuVersion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="마이 프로필"
+            android:text="@={version}"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_noti2"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_img_previous"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
