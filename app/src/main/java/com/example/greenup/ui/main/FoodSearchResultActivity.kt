@@ -1,6 +1,5 @@
 package com.example.greenup.ui.main
 
-import FoodInfoGService
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.greenup.R
-import com.example.greenup.model.remote.FoodInfoGData
+import com.example.greenup.model.remote.FoodBarcodeData
+import com.example.greenup.model.remote.FoodBarcodeService
 import com.example.greenup.model.remote.FoodInfoNomalData
 import com.example.greenup.model.remote.FoodInfoNomalService
 import retrofit2.Call
@@ -16,6 +16,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import okhttp3.*
+import org.json.JSONObject
+import java.io.IOException
 
 class FoodSearchResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,42 +30,51 @@ class FoodSearchResultActivity : AppCompatActivity() {
 
         //인텐트 barcodeId 받아서 해당하는 식품 정보 띄우기
         val barcodeId = intent.getStringExtra("barcodeId")
+        var cmpny_nm = ""
+        var prdt_nm = ""
+        var prdlst_nm = ""
+        var hrnk_prdlst_nm = ""
+        var htrk_prdlst_nm = ""
 
-        //api 통신해서 이미지 주소 가져오기
-        val retrofitService1 = Retrofit.Builder()
-            .baseUrl("https://www.consumer.go.kr/openapi/contents/")
+
+        //api 통신해서 바코드 -> 상품명, 제조사, 분류 가져오기
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://openapi.foodsafetykorea.go.kr/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val service = retrofitService1.create(FoodInfoGService::class.java)
-        val call = service.getImages("O1HC5UI05A", 1, 10)
+        val service = retrofit.create(FoodBarcodeService::class.java)
+        val call = service.getFoodApiData(
+            "유통바코드", "json", 1, 100, barcodeId.toString(), "b1e4d2ecdb5a4851addd"
+        )
 
-        val foodConResponses = mutableListOf<Int>()
-        //val totalRequests = 15 - 2 + 1
-        //var completedRequests = 0
-
-        call.enqueue(object : Callback<FoodInfoGData> {
-            override fun onResponse(call: Call<FoodInfoGData>, response: Response<FoodInfoGData>) {
+        call.enqueue(object : Callback<FoodBarcodeData> {
+            override fun onResponse(
+                call: Call<FoodBarcodeData>,
+                response: Response<FoodBarcodeData>
+            ) {
                 if (response.isSuccessful) {
-                    //Use response.body() to handle data.
-                    Log.d("response", response.body().toString())
-                    Log.d("response", response.body()?.tmnlImgUrl.toString())
-                    imgUrl = response.body()?.tmnlImgUrl.toString()
-                } else {
-                    //Handle error
-                    Log.d("error", "error api 1")
+                    val apiResponse = response.body()
 
+                    Log.d("Retrofit", "성공 : ${apiResponse.toString()}")
+                    cmpny_nm = apiResponse?.CMPNY_NM.toString()
+                    prdt_nm = apiResponse?.PRDT_NM.toString()
+                    prdlst_nm = apiResponse?.PRDLST_NM.toString()
+                    hrnk_prdlst_nm = apiResponse?.HRNK_PRDLST_NM.toString()
+                    htrk_prdlst_nm = apiResponse?.HTRK_PRDLST_NM.toString()
+                    Log.d("Retrofit", "성공 : $cmpny_nm $prdt_nm $prdlst_nm $hrnk_prdlst_nm $htrk_prdlst_nm")
+
+                } else {
+
+                    Log.d("Retrofit", "실패 : ${response.raw()}")
                 }
             }
 
-            override fun onFailure(call: Call<FoodInfoGData>, t: Throwable) {
-                //Handle failure
-                Log.d("error", "failure api 1")
+            override fun onFailure(call: Call<FoodBarcodeData>, t: Throwable) {
+
+                Log.d("Retrofit", "실패 : $t")
             }
         })
-
-        //이미지 띄우기
-        Glide.with(this).load(imgUrl).into(foodImgView)
 
         //api 통신해서 인증정보 가져오기
         val retrofitService2 = Retrofit.Builder()
@@ -74,6 +86,7 @@ class FoodSearchResultActivity : AppCompatActivity() {
 
         // List to store responses
         //val responses = mutableListOf<FoodInfoNomalData>()
+        var foodConResponses = mutableListOf<Int>()
 
         fun processFoodNormalApiResponse(responses: List<Int>): String {
             // Define the mapping from the certificate numbers to their descriptions.
@@ -119,7 +132,7 @@ class FoodSearchResultActivity : AppCompatActivity() {
         }
 
         for (i in 2..15) { // Adjust this range as needed
-            val url = "${i.toString().padStart(2, '0')}?serviceKey=QHGSAHDGCP&pageNo=1&cntPerPage=100&productNm=%EC%82%BC%EB%8B%A4%EC%88%98"
+            val url = "${i.toString().padStart(2, '0')}?serviceKey=QHGSAHDGCP&pageNo=1&cntPerPage=100&productNm=${prdt_nm}"
             val call = barcodeId?.let { service2.getApiResponses(url, "QHGSAHDGCP", 1, 100, it) }
 
             call!!.enqueue(object : Callback<FoodInfoNomalData> {
@@ -149,6 +162,55 @@ class FoodSearchResultActivity : AppCompatActivity() {
         }
         val foodConRes = processFoodNormalApiResponse(foodConResponses)
         resultTextView.text = foodConRes
+
+
+        //이미지 띄우기
+        val shClient = OkHttpClient()
+
+        //검색어 생성
+        val sercht = prdt_nm + " " + prdlst_nm //+ " " + hrnk_prdlst_nm + " " + htrk_prdlst_nm
+        val url = HttpUrl.Builder()
+            .scheme("https")
+            .host("www.googleapis.com")
+            .addPathSegment("customsearch")
+            .addPathSegment("v1")
+            .addQueryParameter("q", sercht) //search term
+            .addQueryParameter("cx", "107624a81d84b44e6") // Custom Search Engine ID
+            .addQueryParameter("key", "AIzaSyApqZAoIfENdXkhWueos4ZZVvjCRdG4uxg") // API key
+            .addQueryParameter("searchType", "image")
+            .addQueryParameter("num", "1")
+            .build()
+
+        val request = Request.Builder()
+            .url(url)
+            .build()
+
+        shClient.newCall(request).enqueue(object : okhttp3.Callback {
+            override fun onFailure(call: okhttp3.Call, e: IOException) {
+                e.printStackTrace()
+            }
+
+            override fun onResponse(call:okhttp3. Call, response: okhttp3.Response) {
+                response.use {
+                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
+
+                    val responseData = response.body?.string()
+                    if (responseData != null) {
+                        val json = JSONObject(responseData)
+                        val items = json.getJSONArray("items")
+                        val firstItem = items.getJSONObject(0)
+                        imgUrl = firstItem.getString("link")
+                        //println(link)
+                    }
+                }
+            }
+        })
+
+
+
+
+        //Glide.with(this).load(imgUrl).into(foodImgView)
+
 
     }
 }

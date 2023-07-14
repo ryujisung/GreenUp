@@ -57,6 +57,7 @@ dependencies {
     implementation "androidx.activity:activity-ktx:1.7.2"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation "com.squareup.okhttp3:logging-interceptor:3.12.0"
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
 
     def retrofit_version = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -101,7 +102,7 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     //implementation 'me.relex:circleindicator:2.1.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.2.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

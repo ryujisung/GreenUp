@@ -52,7 +52,7 @@ class FoodScanActivity : AppCompatActivity() {
                     val intent = Intent(this@FoodScanActivity, FoodSearchResultActivity::class.java).apply {
                         putExtra("barcodeId", viewModel.barCodeId.value)
                     }
-                    startActivityForResult(intent, 1) // 1 is the request code
+                    //startActivityForResult(intent, 1) // 1 is the request code
                 }
             }
 
