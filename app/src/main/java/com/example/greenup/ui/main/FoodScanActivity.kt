@@ -1,5 +1,6 @@
 package com.example.greenup.ui.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -47,6 +48,11 @@ class FoodScanActivity : AppCompatActivity() {
             override fun barcodeResult(result: BarcodeResult?) {
                 if(viewModel.barCodeId.value != result.toString()) {
                     viewModel.barCodeId.value = result.toString()
+
+                    val intent = Intent(this@FoodScanActivity, FoodSearchResultActivity::class.java).apply {
+                        putExtra("barcodeId", viewModel.barCodeId.value)
+                    }
+                    startActivityForResult(intent, 1) // 1 is the request code
                 }
             }
 
