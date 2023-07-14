@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.greenup.utils.State
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import java.util.regex.Pattern
 
 class SignUpViewModel: ViewModel() {
@@ -20,16 +21,30 @@ class SignUpViewModel: ViewModel() {
 
     fun sigininAndSignup() : Boolean{
         var k = false
-        Log.d("dd",nickname.value.toString())
-        Log.d("dd","에엥에")
         auth?.createUserWithEmailAndPassword(email.value.toString(),password.value.toString())
             ?.addOnCompleteListener {
                     task ->
 
                 if (task.isSuccessful){
-
+                    val db = FirebaseFirestore.getInstance()
                     state.value = State.OK
                     k = true
+                    val data = hashMapOf(
+                        "nickname" to nickname.value.toString()
+                    )
+
+                    db.collection(email.value.toString())
+                        .document("usernickname")
+                        .set(data)
+                        .addOnSuccessListener {
+                            Log.e("dd","success")
+                        }
+                        .addOnFailureListener { exception ->
+                            Log.e("dd",exception.toString())
+                        }
+
+                    Log.d("dd","ddd")
+
                 }else if(task.exception?.message.isNullOrEmpty()){
                     Log.e("dd",task.exception?.message.toString())
                     state.value = State.FAIL
