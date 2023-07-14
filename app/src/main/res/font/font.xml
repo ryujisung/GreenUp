@@ -4,5 +4,6 @@
     <font android:font="@font/suit_medium"/>
     <font android:font="@font/suit_semibold"/>
     <font android:font="@font/suit_bold"/>
+    <font android:font="@font/suit_heavy"/>
 
 </font-family>

@@ -12,7 +12,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,59 +43,62 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14sp"
-                android:textColor="@color/black"
-                android:text="비밀번호 확인을 위해"
-                android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="@id/line_signUp3_start"
-                app:layout_constraintTop_toBottomOf="@id/hd_signUp3" />
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.08"/>
 
-            <TextView
-                android:id="@+id/textView2"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="다시 비밀번호를 입력해주세요"
-                android:textColor="@color/black"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.88"/>
 
-                android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="@id/line_signUp3_start"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-            <TextView
-                android:id="@+id/textView3"
+            <LinearLayout
+                android:id="@+id/pw_layout"
                 android:layout_width="wrap_content"
-
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="비밀번호"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="@id/guideline1"
+                app:layout_constraintStart_toStartOf="@id/line_signUp3_start">
 
-                android:textColor="#B7B7B7"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="비밀번호를 다시 입력해 주세요"
+                    android:fontFamily="@font/suit_bold"
+                    android:textSize="25sp" />
 
-                android:textSize="13sp"
-                app:layout_constraintStart_toStartOf="@id/line_signUp3_start"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="비밀번호"
+                    android:textColor="@color/gray2"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/suit_bold" />
+
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/edt_signUp3_email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="비밀번호를 입력해주세요"
-                android:text = "@={vm.passwordRe}"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="5dp"
+                android:hint="비밀번호를 입력해 주세요"
+                android:text = "@={vm.password}"
                 android:inputType="textPassword"
+                android:background="@drawable/edt_background"
 
                 app:layout_constraintEnd_toEndOf="@id/line_signUp3_end"
                 app:layout_constraintStart_toStartOf="@id/line_signUp3_start"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@id/pw_layout" />
 
             <TextView
-
                 android:id="@+id/txt_sign3_eror"
                 android:drawableStart="@drawable/error"
                 android:text="입력한 비밀번호와 다릅니다."
@@ -109,21 +111,13 @@
                 app:layout_constraintEnd_toEndOf="@id/line_signUp3_end"
                 app:layout_constraintStart_toStartOf="@id/line_signUp3_start"/>
 
-
             <Button
                 android:id="@+id/next"
                 android:layout_width="0dp"
-                android:textStyle="bold"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/color1"
                 android:background="@drawable/button_round"
                 android:text="다음"
-
-                android:layout_marginVertical="16dp"
-                android:src="@drawable/button_round"
-                app:layout_constraintVertical_bias="1"
-                app:layout_constraintTop_toBottomOf="@id/edt_signUp3_email"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guideline2"
                 app:layout_constraintEnd_toEndOf="@id/line_signUp3_end"
                 app:layout_constraintStart_toStartOf="@id/line_signUp3_start" />
 
