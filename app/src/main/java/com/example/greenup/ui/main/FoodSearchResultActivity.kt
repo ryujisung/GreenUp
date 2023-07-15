@@ -31,10 +31,13 @@ class FoodSearchResultActivity : AppCompatActivity() {
         var imgUrl = "https://www.consumer.go.kr/openapi/contents/image/00000463/1.jpg"
 
         //인텐트 barcodeId 받아서 해당하는 식품 정보 띄우기
-        val barcodeId = intent.getStringExtra("barcodeId")
+        //val barcodeId = intent.getStringExtra("barcodeId")
         val foodName = intent.getStringExtra("foodName")
         val foodCompany = intent.getStringExtra("foodCompany")
         val foodCategory = intent.getStringExtra("foodCategory")
+        val foodKind = intent.getStringExtra("foodKind")
+        val foodId = intent.getStringExtra("foodId")
+
 
         val gson = GsonBuilder().setLenient().create()
 
@@ -245,7 +248,6 @@ class FoodSearchResultActivity : AppCompatActivity() {
 
 
         /*
-
         val url = "https://www.googleapis.com/customsearch/v1?" +
                 "key=AIzaSyApqZAoIfENdXkhWueos4ZZVvjCRdG4uxg" +
                 "&cx=107624a81d84b44e6" +
@@ -276,8 +278,6 @@ class FoodSearchResultActivity : AppCompatActivity() {
                 }
             }
         })
-
-
         */
 
     }

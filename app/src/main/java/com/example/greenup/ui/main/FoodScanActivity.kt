@@ -75,6 +75,8 @@ class FoodScanActivity : AppCompatActivity() {
                     putExtra("foodName", viewModel.foodName.value)
                     putExtra("foodCompany", viewModel.foodCompany.value)
                     putExtra("foodCategory", viewModel.foodCategory.value)
+                    putExtra("foodId", viewModel.foodId.value)
+                    putExtra("foodKind", viewModel.foodKind.value)
                 }
                 startActivityForResult(intent, 1) // 1 is the request code
 

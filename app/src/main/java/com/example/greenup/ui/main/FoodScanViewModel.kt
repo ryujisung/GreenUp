@@ -23,6 +23,8 @@ class FoodScanViewModel(application: Application) : ViewModel() {
     var foodName = MutableLiveData<String>()
     var foodCompany = MutableLiveData<String>()
     var foodCategory = MutableLiveData<String>()
+    var foodKind = MutableLiveData<String>()
+    var foodId = MutableLiveData<String>()
     //var foodDate = MutableLiveData<String>()
 
 
@@ -51,7 +53,10 @@ class FoodScanViewModel(application: Application) : ViewModel() {
                 foodName = MutableLiveData(body.C005.row[0].foodName)
                 foodCompany = MutableLiveData(body.C005.row[0].companyName)
                 foodCategory = MutableLiveData(body.C005.row[0].foodKind)
+                foodId = MutableLiveData(body.C005.row[0].foodId)
+                foodKind = MutableLiveData(body.C005.row[0].foodKind)
                 //foodDate = MutableLiveData(body.C005.row[0].date)
+
 
             } else {
                 apiState.value = State.FAIL
