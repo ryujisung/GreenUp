@@ -35,66 +35,57 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_end="16dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline1"
+
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/partypopper"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="98dp"/>
+            <TextView
+                android:id="@+id/text4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.31"/>
+                android:text="가입완료!"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@+id/img3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="21dp"
+                />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline2"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.88"/>
+                android:text="지금 바로 환경을\n지키러 가볼까요?"
+                android:textColor="#505866"
+                android:gravity="center"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/text4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintTop_toTopOf="@id/guideline1"
-                app:layout_constraintStart_toStartOf="@id/line_signUp3_start"
-                app:layout_constraintEnd_toEndOf="@id/line_signUp3_end">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_pock"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="가입완료!"
-                    android:textSize="30sp"
-                    android:fontFamily="@font/suit_bold"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="지금 바로 환경을"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="보호하러 가볼까요?"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
 
             <Button
                 android:id="@+id/next"
                 android:layout_width="0dp"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/color1"
                 android:background="@drawable/button_round"
-                android:text="다음"
-                app:layout_constraintTop_toTopOf="@id/guideline2"
+                android:text="완료"
+
+                android:layout_marginVertical="16dp"
+                android:src="@drawable/button_round"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/line_signUp3_end"
                 app:layout_constraintStart_toStartOf="@id/line_signUp3_start" />
 
