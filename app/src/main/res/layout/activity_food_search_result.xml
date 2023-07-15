@@ -16,63 +16,139 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+
     <TextView
         android:id="@+id/FoodNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="음식 이름"
-        android:textSize="24dp"
+        android:textSize="17sp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/suit_semibold"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/FoodImgView" />
 
+    <View
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/bar"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:foreground="@drawable/gray_hr"
+        app:layout_constraintTop_toBottomOf="@+id/FoodNameTV"/>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="유통표준코드"
+        android:textSize="15sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bar"
+        />
     <TextView
         android:id="@+id/FoodIdTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="유통 코드"
-        android:textSize="20dp"
+        android:textSize="15sp"
+        android:textColor="#5D6760"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toEndOf="@id/text1"
+        app:layout_constraintTop_toBottomOf="@id/bar" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="분류명"
+        android:textSize="15sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="21dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FoodNameTV" />
+        app:layout_constraintTop_toBottomOf="@id/FoodIdTV"
+        />
 
     <TextView
         android:id="@+id/FoodKindTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="분류명"
-        android:textSize="20dp"
+        android:textColor="#5D6760"
+        android:textSize="15sp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toEndOf="@+id/text2"
         app:layout_constraintTop_toBottomOf="@id/FoodIdTV" />
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="범주명"
+        android:textSize="15sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FoodKindTV"
+        />
 
     <TextView
         android:id="@+id/FoodCategoryNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="범주명"
-        android:textSize="20dp"
+        android:textColor="#5D6760"
+        android:textSize="15sp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toEndOf="@+id/text3"
         app:layout_constraintTop_toBottomOf="@id/FoodKindTV" />
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="환경 마크"
+        android:textSize="15sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FoodCategoryNameTV"
+        />
 
     <TextView
         android:id="@+id/ResultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="환경인증"
-        android:textColor="#37A563"
-        android:textSize="22dp"
+        android:textColor="#5D6760"
+        android:textSize="15sp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/text4"
+        app:layout_constraintTop_toBottomOf="@id/FoodCategoryNameTV" />
+    <TextView
+        android:id="@+id/txtt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="환경마크 글씨를 누르면 자세한 설명이 나와요!"
+        android:textColor="#5D6760"
+        android:textSize="15sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FoodCategoryNameTV" />
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/ResultTextView" />
 
 
 

@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.my.noti.Noti3Activity">
+        tools:context=".ui.mark.MarkActivity">
+
         <ImageView
             android:id="@+id/main_img_previous"
             android:layout_width="wrap_content"
@@ -27,13 +28,13 @@
             android:textSize="24sp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="22dp"
-            android:text="알림"
+            android:text="인증마크"
             app:layout_constraintTop_toBottomOf="@+id/main_img_previous"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_marginTop="37dp"
-            android:id="@+id/noti_re_noti"
+            android:id="@+id/mark_re_mark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -41,8 +42,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/my_txt_text0"
-            tools:listitem="@layout/row_main_noti" />
-
+            tools:listitem="@layout/row_search_mark" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
