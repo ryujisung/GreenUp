@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.greenup.R
@@ -68,5 +69,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onBackPressed() {
         // 뒤로가기 버튼을 무시하고 아무 동작도 수행하지 않음
     }
+
 
 }

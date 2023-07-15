@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.greenup.R
 import com.example.greenup.databinding.ActivityMemberEditMainBinding
+import com.example.greenup.databinding.ActivityNoti2Binding
 import com.example.greenup.ui.LoginActivity
+import com.example.greenup.ui.my.MyMainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -21,6 +23,10 @@ class MemberEditMainActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivityMemberEditMainBinding>(this,
             R.layout.activity_member_edit_main
         )
+        binding.mainImgPrevious.setOnClickListener {
+            var intent = Intent(this, MyMainActivity::class.java)
+            startActivity(intent)
+        }
         binding.email =  auth.currentUser?.email
         val db = FirebaseFirestore.getInstance()
         db.collection(auth.currentUser?.email.toString())

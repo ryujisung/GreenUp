@@ -10,6 +10,8 @@ import com.example.greenup.R
 import com.example.greenup.databinding.ActivityLoginBinding
 import com.example.greenup.databinding.ActivityMemberEditMainBinding
 import com.example.greenup.databinding.ActivityNameChangeBinding
+import com.example.greenup.databinding.ActivityNoti2Binding
+import com.example.greenup.ui.my.MyMainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -23,6 +25,10 @@ class NameChangeActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivityNameChangeBinding>(this,
             R.layout.activity_name_change
         )
+        binding.mainImgPrevious.setOnClickListener {
+            var intent = Intent(this, MyMainActivity::class.java)
+            startActivity(intent)
+        }
         val db = FirebaseFirestore.getInstance()
         db.collection(auth.currentUser?.email.toString())
             .get()
