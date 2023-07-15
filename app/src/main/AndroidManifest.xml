@@ -61,10 +61,10 @@
             android:name=".ui.viewpager.ViewPagerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.FoodScanActivity"
+            android:name=".ui.IntroActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.IntroActivity"
+            android:name=".ui.main.FoodScanActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

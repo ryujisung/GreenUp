@@ -104,6 +104,24 @@ dependencies {
     //implementation 'me.relex:circleindicator:2.1.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.firebase:firebase-messaging:23.2.0'
+
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+    //implementation 'org.simpleframework.xml:simple-xml:2.7.1'
+
+    //retrofit
+    //implementation "com.squareup.retrofit2:retrofit:2.7.2"
+
+    //xml parser
+    implementation 'com.tickaroo.tikxml:annotation:0.8.13'
+    implementation 'com.tickaroo.tikxml:core:0.8.13'
+    implementation 'com.tickaroo.tikxml:retrofit-converter:0.8.13'
+    annotationProcessor  'com.tickaroo.tikxml:processor:0.8.13'
+
+    //kapt 'com.tickaroo.tikxml:processor:0.8.13'
+    //kapt "com.squareup.moshi:moshi-kotlin-codegen:1.9.3"
+
+    implementation 'com.squareup.retrofit2:converter-simplexml:2.9.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'

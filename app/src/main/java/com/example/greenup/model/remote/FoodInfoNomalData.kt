@@ -1,9 +1,11 @@
 package com.example.greenup.model.remote
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+
+
 
 data class FoodInfoNomalData(
-    @SerializedName("allCnt") val allCnt: Int,
-    @SerializedName("code") val code: Int,
-    @SerializedName("codeMsg") val codeMsg: String
+    @Json(name = "allCnt") val allCnt: Int,
+    @Json(name = "code") val code: Int,
+    @Json(name = "codeMsg") val codeMsg: String
 )

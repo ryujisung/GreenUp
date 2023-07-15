@@ -11,5 +11,5 @@ interface FoodInfoNomalService {
                         @Query("serviceKey") serviceKey: String,
                         @Query("pageNo") pageNo: Int,
                         @Query("cntPerPage") cntPerPage: Int,
-                        @Query("productNm") productNm: String): Call<FoodInfoNomalData>
+                        @Query("productNm") productNm: String): Call<NS2>
 }
