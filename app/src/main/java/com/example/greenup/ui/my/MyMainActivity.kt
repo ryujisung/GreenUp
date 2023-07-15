@@ -1,19 +1,16 @@
 package com.example.greenup.ui.my
 
 import android.content.Intent
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.example.greenup.R
-import com.example.greenup.databinding.ActivityFoodScanBinding
-import com.example.greenup.databinding.ActivityMainBinding
 import com.example.greenup.databinding.ActivityMyMainBinding
 import com.example.greenup.ui.LoginActivity
+import com.example.greenup.ui.my.meberedit.MemberEditMainActivity
+import com.example.greenup.ui.my.noti.Noti2Activity
+import com.example.greenup.ui.my.noti.NotiActivity
+import com.example.greenup.ui.my.pwedit.PassEditMainActivity
 import com.example.portplay.base.BaseActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -55,15 +52,15 @@ class MyMainActivity: BaseActivity<ActivityMyMainBinding>(R.layout.activity_my_m
             startActivity(intent)
         }
         binding.myTxtEdit.setOnClickListener {
-            var intent = Intent(this, NotiActivity::class.java)
+            var intent = Intent(this, MemberEditMainActivity::class.java)
             startActivity(intent)
         }
         binding.myTxtPw.setOnClickListener {
-            var intent = Intent(this, NotiActivity::class.java)
+            var intent = Intent(this, PassEditMainActivity::class.java)
             startActivity(intent)
         }
         binding.myTxtNoti2.setOnClickListener {
-            var intent = Intent(this, NotiActivity::class.java)
+            var intent = Intent(this, Noti2Activity::class.java)
             startActivity(intent)
         }
 

@@ -1,4 +1,4 @@
-package com.example.greenup.ui.my
+package com.example.greenup.ui.my.noti
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

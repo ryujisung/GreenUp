@@ -49,4 +49,8 @@ class LoginActivity : AppCompatActivity() {
 
 
     }
+    override fun onBackPressed() {
+        // 뒤로가기 버튼을 무시하고 아무 동작도 수행하지 않음
+    }
+
 }
