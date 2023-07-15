@@ -15,18 +15,65 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
-        android:id="@+id/ResultTextView"
+        android:id="@+id/FoodNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="환경"
-        android:textColor="#37A563"
+        android:text="음식 이름"
         android:textSize="24dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/FoodImgView" />
+
+    <TextView
+        android:id="@+id/FoodIdTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="유통 코드"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FoodNameTV" />
+
+    <TextView
+        android:id="@+id/FoodKindTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="분류명"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FoodIdTV" />
+
+    <TextView
+        android:id="@+id/FoodCategoryNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="범주명"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FoodKindTV" />
+
+    <TextView
+        android:id="@+id/ResultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="환경인증"
+        android:textColor="#37A563"
+        android:textSize="22dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FoodCategoryNameTV" />
+
 
 
 

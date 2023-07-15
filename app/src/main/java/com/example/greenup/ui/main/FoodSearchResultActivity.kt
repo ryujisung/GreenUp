@@ -1,5 +1,6 @@
 package com.example.greenup.ui.main
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -28,6 +29,13 @@ class FoodSearchResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_food_search_result)
         val foodImgView = findViewById<ImageView>(R.id.FoodImgView)
         val resultTextView = findViewById<TextView>(R.id.ResultTextView)
+        val foodNameTextView = findViewById<TextView>(R.id.FoodNameTV)
+        val foodIdTextView = findViewById<TextView>(R.id.FoodIdTV)
+        val foodKindTextView = findViewById<TextView>(R.id.FoodKindTV)
+        val foodCategoryTextView = findViewById<TextView>(R.id.FoodCategoryNameTV)
+
+
+
         var imgUrl = "https://www.consumer.go.kr/openapi/contents/image/00000463/1.jpg"
 
         //인텐트 barcodeId 받아서 해당하는 식품 정보 띄우기
@@ -38,8 +46,10 @@ class FoodSearchResultActivity : AppCompatActivity() {
         val foodKind = intent.getStringExtra("foodKind")
         val foodId = intent.getStringExtra("foodId")
 
-
-        val gson = GsonBuilder().setLenient().create()
+        foodNameTextView.text = "${foodCompany} ${foodName}"
+        foodIdTextView.text = foodId
+        foodKindTextView.text = foodKind
+        foodCategoryTextView.text = foodCategory
 
         /*
         var cmpny_nm = ""
@@ -153,10 +163,14 @@ class FoodSearchResultActivity : AppCompatActivity() {
             return stringBuilder.toString()
         }
 
+        //인증 결과 검색을 위해 음식 이름 앞 5글자만 자르기
+        val foodName2 = foodName?.substring(0, 5)
+
+
         for (i in 2..15) { // Adjust this range as needed
             val url = "${i.toString().padStart(2, '0')}"
             //Log.d("url", url)
-            val call = service2.getApiResponses(url, "QHGSAHDGCP", 1, 100, "삼다수")
+            val call = service2.getApiResponses(url, "QHGSAHDGCP", 1, 100, foodName2.toString())
 
             call!!.enqueue(object : Callback<NS2> {
                 override fun onResponse(call: Call<NS2>, response: Response<NS2>) {
@@ -190,7 +204,12 @@ class FoodSearchResultActivity : AppCompatActivity() {
             })
         }
 
-
+        //foodConRes가 공백인 경유 "없음" 으로 설
+        if (foodConResponses.isEmpty()) {
+            //텍스트 색상 지정
+            resultTextView.setTextColor(Color.parseColor("#000000"))
+            resultTextView.text = "없음"
+        }
 
         //이미지 띄우기
         val shClient = OkHttpClient()

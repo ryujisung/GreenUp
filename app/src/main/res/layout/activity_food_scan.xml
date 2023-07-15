@@ -69,7 +69,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
-            android:text="음식 등록"
+            android:text="음식 정보 확인"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textFontWeight="800"
