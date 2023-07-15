@@ -1,4 +1,4 @@
-package com.heechan.iampig.utils
+package com.example.greenup.utils
 
 enum class Result {
     OK, FAIL

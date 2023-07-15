@@ -11,7 +11,7 @@ import com.example.greenup.R
 import com.example.greenup.databinding.FragmentFirstBinding
 import com.example.greenup.databinding.FragmentSecondBinding
 import com.example.greenup.ui.LoginActivity
-import com.example.portplay.base.BaseFragment
+import com.example.greenup.ui.base.BaseFragment
 
 class SecondFragment : BaseFragment<FragmentSecondBinding>(R.layout.fragment_second) {
 

@@ -1,5 +1,5 @@
-package com.heechan.iampig.model.remote
-import com.heechan.iampig.model.data.FoodApiResponse
+package com.example.greenup.model.remote
+import com.example.greenup.model.data.FoodApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

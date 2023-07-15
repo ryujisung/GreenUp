@@ -1,7 +1,7 @@
-package com.heechan.iampig.model.remote
+package com.example.greenup.model.remote
 
 import android.util.Log
-import com.heechan.iampig.model.data.FoodApiResponse
+import com.example.greenup.model.data.FoodApiResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient

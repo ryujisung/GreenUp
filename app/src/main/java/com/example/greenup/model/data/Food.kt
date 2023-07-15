@@ -1,10 +1,9 @@
-package com.heechan.iampig.model.data
+package com.example.greenup.model.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
-import retrofit2.http.GET
 import java.time.LocalDateTime
 
 @Entity(tableName = "food_table")

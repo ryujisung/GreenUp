@@ -10,7 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.greenup.R
 import com.example.greenup.databinding.FragmentFirstBinding
 import com.example.greenup.ui.LoginActivity
-import com.example.portplay.base.BaseFragment
+import com.example.greenup.ui.base.BaseFragment
 
 
 class FirstFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first) {

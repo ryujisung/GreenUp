@@ -1,10 +1,10 @@
-package com.heechan.iampig.model.remote
+package com.example.greenup.model.remote
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.heechan.iampig.model.data.Food
+import com.example.greenup.model.data.Food
 
 @Database(entities = arrayOf(Food::class), version = 2, exportSchema = false)
 abstract class FoodDatabase : RoomDatabase() {

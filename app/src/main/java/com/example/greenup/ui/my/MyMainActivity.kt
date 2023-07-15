@@ -9,13 +9,13 @@ import androidx.databinding.DataBindingUtil
 import com.example.greenup.R
 import com.example.greenup.databinding.ActivityMyMainBinding
 import com.example.greenup.ui.LoginActivity
+import com.example.greenup.ui.base.BaseActivity
 import com.example.greenup.ui.main.MainActivity
 import com.example.greenup.ui.my.meberedit.MemberEditMainActivity
 import com.example.greenup.ui.my.noti.Noti2Activity
 import com.example.greenup.ui.my.noti.NotiActivity
 import com.example.greenup.ui.my.pwedit.PassCheckActivity
 import com.example.greenup.ui.my.pwedit.PassEditMainActivity
-import com.example.portplay.base.BaseActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

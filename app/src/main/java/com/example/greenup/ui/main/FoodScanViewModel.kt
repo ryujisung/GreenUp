@@ -6,9 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.greenup.utils.State
-import com.heechan.iampig.model.remote.FoodApiRepository
-import com.heechan.iampig.model.remote.FoodDBRepository
-import com.heechan.iampig.model.data.Food
+import com.example.greenup.model.remote.FoodApiRepository
+import com.example.greenup.model.remote.FoodDBRepository
+import com.example.greenup.model.data.Food
 import kotlinx.coroutines.*
 
 class FoodScanViewModel(application: Application) : ViewModel() {

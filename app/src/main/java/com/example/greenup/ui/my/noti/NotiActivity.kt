@@ -8,8 +8,8 @@ import androidx.databinding.DataBindingUtil
 import com.example.greenup.R
 import com.example.greenup.databinding.ActivityNoti2Binding
 import com.example.greenup.databinding.ActivityNotiBinding
+import com.example.greenup.ui.base.BaseActivity
 import com.example.greenup.ui.my.MyMainActivity
-import com.example.portplay.base.BaseActivity
 
 class NotiActivity : BaseActivity<ActivityNotiBinding>(R.layout.activity_noti){
     private lateinit var notificationSwitch: Switch
