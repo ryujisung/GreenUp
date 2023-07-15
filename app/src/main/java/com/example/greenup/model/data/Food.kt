@@ -32,4 +32,8 @@ data class Food(
     @Json(name = "PRDLST_NM")
     @ColumnInfo(name = "food_name")
     var foodName: String = "",
+
+    @Json(name = "CMPNY_NM")
+    @ColumnInfo(name = "company_name")
+    var companyName: String = "",
 )

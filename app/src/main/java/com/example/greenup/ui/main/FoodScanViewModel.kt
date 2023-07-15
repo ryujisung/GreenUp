@@ -21,6 +21,11 @@ class FoodScanViewModel(application: Application) : ViewModel() {
     val roomState = MutableLiveData<State>()
 
     var foodName = MutableLiveData<String>()
+    var foodCompany = MutableLiveData<String>()
+    var foodCategory = MutableLiveData<String>()
+    //var foodDate = MutableLiveData<String>()
+
+
 
     fun getFoodDataByBarcodeId() {
         viewModelScope.launch(CoroutineExceptionHandler { _, e ->
@@ -44,6 +49,10 @@ class FoodScanViewModel(application: Application) : ViewModel() {
                 foodData.value = body.C005.row[0]
                 Log.d("foodApi", body.C005.row[0].foodName)
                 foodName = MutableLiveData(body.C005.row[0].foodName)
+                foodCompany = MutableLiveData(body.C005.row[0].companyName)
+                foodCategory = MutableLiveData(body.C005.row[0].foodKind)
+                //foodDate = MutableLiveData(body.C005.row[0].date)
+
             } else {
                 apiState.value = State.FAIL
             }

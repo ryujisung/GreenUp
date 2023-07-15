@@ -32,6 +32,11 @@ class FoodSearchResultActivity : AppCompatActivity() {
 
         //인텐트 barcodeId 받아서 해당하는 식품 정보 띄우기
         val barcodeId = intent.getStringExtra("barcodeId")
+        val foodName = intent.getStringExtra("foodName")
+        val foodCompany = intent.getStringExtra("foodCompany")
+        val foodCategory = intent.getStringExtra("foodCategory")
+
+        /*
         var cmpny_nm = ""
         var prdt_nm = ""
         var prdlst_nm = ""
@@ -85,6 +90,7 @@ class FoodSearchResultActivity : AppCompatActivity() {
                 Log.d("Retrofit", "실패 : $t")
             }
         })
+        */
 
         //api 통신해서 인증정보 가져오기
         val retrofitService2 = Retrofit.Builder()
@@ -142,7 +148,7 @@ class FoodSearchResultActivity : AppCompatActivity() {
         }
 
         for (i in 2..15) { // Adjust this range as needed
-            val url = "${i.toString().padStart(2, '0')}?serviceKey=QHGSAHDGCP&pageNo=1&cntPerPage=100&productNm=${prdt_nm}"
+            val url = "${i.toString().padStart(2, '0')}?serviceKey=QHGSAHDGCP&pageNo=1&cntPerPage=100&productNm=${foodName}"
             val call = barcodeId?.let { service2.getApiResponses(url, "QHGSAHDGCP", 1, 100, it) }
 
             call!!.enqueue(object : Callback<FoodInfoNomalData> {
@@ -178,7 +184,7 @@ class FoodSearchResultActivity : AppCompatActivity() {
         val shClient = OkHttpClient()
 
         //검색어 생성
-        val sercht = prdt_nm + " " + prdlst_nm //+ " " + hrnk_prdlst_nm + " " + htrk_prdlst_nm
+        val sercht = "${foodCompany} ${foodName}"
         val url = HttpUrl.Builder()
             .scheme("https")
             .host("www.googleapis.com")
