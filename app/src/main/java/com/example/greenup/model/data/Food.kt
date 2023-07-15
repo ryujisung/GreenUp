@@ -1,4 +1,4 @@
-package com.heechan.iampig.model.data
+package com.example.greenup.model.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -11,6 +11,8 @@ import com.example.greenup.model.remote.FoodBarcodeData
 import com.example.greenup.model.remote.FoodBarcodeService
 import com.example.greenup.model.remote.FoodInfoNomalData
 import com.example.greenup.model.remote.FoodInfoNomalService
+import com.example.greenup.model.remote.MainResponse
+import com.google.gson.GsonBuilder
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,16 +38,21 @@ class FoodSearchResultActivity : AppCompatActivity() {
         var hrnk_prdlst_nm = ""
         var htrk_prdlst_nm = ""
 
+        var gson = GsonBuilder().setLenient().create()
+        //val mainResponse: MainResponse = gson.fromJson(jsonString, MainResponse::class.java)
+
 
         //api 통신해서 바코드 -> 상품명, 제조사, 분류 가져오기
         val retrofit = Retrofit.Builder()
             .baseUrl("http://openapi.foodsafetykorea.go.kr/api/")
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
+            //.also { println(it.toString()) } // Add this line
+
 
         val service = retrofit.create(FoodBarcodeService::class.java)
         val call = service.getFoodApiData(
-            "유통바코드", "json", 1, 100, barcodeId.toString(), "b1e4d2ecdb5a4851addd"
+            "I2570", "json", 1, 100, barcodeId.toString(), "b1e4d2ecdb5a4851addd"
         )
 
         call.enqueue(object : Callback<FoodBarcodeData> {
@@ -54,19 +61,22 @@ class FoodSearchResultActivity : AppCompatActivity() {
                 response: Response<FoodBarcodeData>
             ) {
                 if (response.isSuccessful) {
-                    val apiResponse = response.body()
-
+                    //val apiResponse = response.body()
+                    val apiResponse = JSONObject(response.body()?.toString() ?: "")
                     Log.d("Retrofit", "성공 : ${apiResponse.toString()}")
-                    cmpny_nm = apiResponse?.CMPNY_NM.toString()
-                    prdt_nm = apiResponse?.PRDT_NM.toString()
-                    prdlst_nm = apiResponse?.PRDLST_NM.toString()
-                    hrnk_prdlst_nm = apiResponse?.HRNK_PRDLST_NM.toString()
-                    htrk_prdlst_nm = apiResponse?.HTRK_PRDLST_NM.toString()
+
+                    cmpny_nm = apiResponse.optString("CMPNY_NM")
+                    prdt_nm = apiResponse.optString("PRDT_NM")
+                    prdlst_nm = apiResponse.optString("PRDLST_NM")
+                    hrnk_prdlst_nm = apiResponse.optString("HRNK_PRDLST_NM")
+                    htrk_prdlst_nm = apiResponse.optString("HTRK_PRDLST_NM")
                     Log.d("Retrofit", "성공 : $cmpny_nm $prdt_nm $prdlst_nm $hrnk_prdlst_nm $htrk_prdlst_nm")
 
                 } else {
+                    //Log.d("Retrofit", "실패 : ${response.body()}")
+                    Log.d("Retrofit", "실패 : ${response.raw()} ${response.code()} ${response.message()} ${response.errorBody()} ${response.headers()} ${response.isSuccessful} ${response.body()} ")
 
-                    Log.d("Retrofit", "실패 : ${response.raw()}")
+
                 }
             }
 

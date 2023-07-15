@@ -1,7 +1,7 @@
-package com.heechan.iampig.model.remote
+package com.example.greenup.model.remote
 
 import androidx.room.*
-import com.heechan.iampig.model.data.Food
+import com.example.greenup.model.data.Food
 
 @Dao
 interface FoodDao {

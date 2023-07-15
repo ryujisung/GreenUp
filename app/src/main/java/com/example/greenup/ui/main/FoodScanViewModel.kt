@@ -6,9 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.greenup.utils.State
-import com.heechan.iampig.model.remote.FoodApiRepository
-import com.heechan.iampig.model.remote.FoodDBRepository
-import com.heechan.iampig.model.data.Food
+import com.example.greenup.model.remote.FoodApiRepository
+import com.example.greenup.model.remote.FoodDBRepository
+import com.example.greenup.model.data.Food
 import kotlinx.coroutines.*
 
 class FoodScanViewModel(application: Application) : ViewModel() {
@@ -19,6 +19,8 @@ class FoodScanViewModel(application: Application) : ViewModel() {
     val foodData = MutableLiveData<Food>()
     val apiState = MutableLiveData<State>()
     val roomState = MutableLiveData<State>()
+
+    var foodName = MutableLiveData<String>()
 
     fun getFoodDataByBarcodeId() {
         viewModelScope.launch(CoroutineExceptionHandler { _, e ->
@@ -41,6 +43,7 @@ class FoodScanViewModel(application: Application) : ViewModel() {
 
                 foodData.value = body.C005.row[0]
                 Log.d("foodApi", body.C005.row[0].foodName)
+                foodName = MutableLiveData(body.C005.row[0].foodName)
             } else {
                 apiState.value = State.FAIL
             }
