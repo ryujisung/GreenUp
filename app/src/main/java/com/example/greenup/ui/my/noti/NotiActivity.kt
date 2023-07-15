@@ -1,11 +1,15 @@
-package com.example.greenup.ui.my
+package com.example.greenup.ui.my.noti
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Switch
+import androidx.databinding.DataBindingUtil
 import com.example.greenup.R
+import com.example.greenup.databinding.ActivityNoti2Binding
 import com.example.greenup.databinding.ActivityNotiBinding
-import com.example.portplay.base.BaseActivity
+import com.example.greenup.ui.base.BaseActivity
+import com.example.greenup.ui.my.MyMainActivity
 
 class NotiActivity : BaseActivity<ActivityNotiBinding>(R.layout.activity_noti){
     private lateinit var notificationSwitch: Switch
@@ -13,6 +17,7 @@ class NotiActivity : BaseActivity<ActivityNotiBinding>(R.layout.activity_noti){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_noti)
+
         notificationSwitch = binding.notiSwitchNoti
         notificationSwitch.setOnCheckedChangeListener { _, isChecked ->
             saveNotificationSetting(isChecked)
@@ -20,6 +25,13 @@ class NotiActivity : BaseActivity<ActivityNotiBinding>(R.layout.activity_noti){
         }
         val notificationEnabled = isNotificationEnabled()
         notificationSwitch.isChecked = notificationEnabled
+        val binding = DataBindingUtil.setContentView<ActivityNoti2Binding>(this,
+            R.layout.activity_noti2
+        )
+        binding.mainImgPrevious.setOnClickListener {
+            var intent = Intent(this, MyMainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
     private fun onSwitchChanged(isChecked: Boolean) {

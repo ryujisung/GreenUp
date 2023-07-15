@@ -1,4 +1,4 @@
-package com.example.portplay.base
+package com.example.greenup.ui.base
 
 import android.content.Context
 import android.os.Bundle

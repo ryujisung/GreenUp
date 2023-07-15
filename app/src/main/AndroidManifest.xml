@@ -16,6 +16,24 @@
         tools:targetApi="31"
         android:networkSecurityConfig="@xml/network_security_config">
         <activity
+            android:name=".ui.my.pwedit.PassCheckActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.my.meberedit.NameChangeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.my.noti.Noti3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.my.noti.Noti2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.my.meberedit.MemberEditMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.my.pwedit.PassEditMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.main.FoodSearchResultActivity"
             android:exported="false" />
 
@@ -28,7 +46,7 @@
         </service>
 
         <activity
-            android:name=".ui.my.NotiActivity"
+            android:name=".ui.my.noti.NotiActivity"
             android:exported="false" />
         <activity
             android:name=".ui.my.MyMainActivity"
@@ -44,6 +62,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.main.FoodScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,9 +72,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.IntroActivity"
-            android:exported="false" />
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false" />

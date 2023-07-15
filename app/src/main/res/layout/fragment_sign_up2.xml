@@ -9,111 +9,126 @@
             type="com.example.greenup.ui.signup.SignUpViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/line_signUp2_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp" />
+        android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/line_signUp2_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <com.example.greenup.ui.header.NavigationHeader
-            android:id="@+id/hd_signUp2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.08"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.88"/>
-
-        <LinearLayout
-            android:id="@+id/pw_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="@id/guideline1"
-            app:layout_constraintStart_toStartOf="@id/line_signUp2_start">
-
-            <TextView
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/line_signUp2_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="비밀번호를 입력해 주세요"
-                android:fontFamily="@font/suit_bold"
-                android:textSize="25sp" />
 
-            <TextView
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/line_signUp2_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <com.example.greenup.ui.header.NavigationHeader
+                android:id="@+id/hd_signUp2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14sp"
+                android:textColor="@color/black"
+                android:text="좋아요! 그럼 다음으로 가볼까요?"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@id/line_signUp2_start"
+                app:layout_constraintTop_toBottomOf="@id/hd_signUp2" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="비밀번호를 입력해주세요"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textFontWeight="700"
+
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@id/line_signUp2_start"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:text="비밀번호"
-                android:textColor="@color/gray2"
-                android:textSize="16sp"
-                android:fontFamily="@font/suit_bold" />
 
-        </LinearLayout>
+                android:textColor="#B7B7B7"
 
-        <EditText
-            android:id="@+id/edt_signUp2_email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="5dp"
-            android:hint="비밀번호를 입력해 주세요"
-            android:text = "@={vm.password}"
-            android:inputType="textPassword"
-            android:background="@drawable/edt_background"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@id/line_signUp2_start"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-            app:layout_constraintEnd_toEndOf="@id/line_signUp2_end"
-            app:layout_constraintStart_toStartOf="@id/line_signUp2_start"
-            app:layout_constraintTop_toBottomOf="@id/pw_layout" />
+            <EditText
+                android:id="@+id/edt_signUp2_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="비밀번호를 입력해주세요"
+                android:text = "@={vm.password}"
+                android:inputType="textPassword"
 
-        <TextView
-            android:id="@+id/txt_sign2_eror"
-            android:drawableStart="@drawable/error"
-            android:text="비밀번호를 제대로 입력해 주세요"
-            android:visibility="invisible"
-            android:drawablePadding="3dp"
-            android:textColor="@color/error"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/edt_signUp2_email"
-            app:layout_constraintEnd_toEndOf="@id/line_signUp2_end"
-            app:layout_constraintStart_toStartOf="@id/line_signUp2_start"/>
+                app:layout_constraintEnd_toEndOf="@id/line_signUp2_end"
+                app:layout_constraintStart_toStartOf="@id/line_signUp2_start"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+
+                android:id="@+id/txt_sign2_eror"
+                android:drawableStart="@drawable/error"
+                android:text="비밀번호를 입력해주세요"
+                android:visibility="invisible"
+                android:drawablePadding="3dp"
+                android:textColor="@color/error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/edt_signUp2_email"
+                app:layout_constraintEnd_toEndOf="@id/line_signUp2_end"
+                app:layout_constraintStart_toStartOf="@id/line_signUp2_start"/>
 
 
-        <Button
-            android:id="@+id/next"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_round"
-            android:text="다음"
-            app:layout_constraintTop_toTopOf="@id/guideline2"
-            app:layout_constraintEnd_toEndOf="@id/line_signUp2_end"
-            app:layout_constraintStart_toStartOf="@id/line_signUp2_start" />
+            <Button
+                android:id="@+id/next"
+                android:layout_width="0dp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color1"
+                android:background="@drawable/button_round"
+                android:text="다음"
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginVertical="16dp"
+                android:src="@drawable/button_round"
+                app:layout_constraintVertical_bias="1"
+                app:layout_constraintTop_toBottomOf="@id/edt_signUp2_email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/line_signUp2_end"
+                app:layout_constraintStart_toStartOf="@id/line_signUp2_start" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.my.pwedit.PassCheckActivity">
+        <ImageView
+            android:id="@+id/main_img_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="22dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_txt_text0"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="22dp"
+            android:text = "비밀번호 확인"
+            app:layout_constraintTop_toBottomOf="@+id/main_img_previous"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="현재 비밀번호를 입력해주세요"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text0"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_text0"
+            android:textColor="#5D6760"
+            android:layout_marginTop="7dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="현재 비밀번호"
+
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text0"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_text0"
+            android:textColor="#B8BFBA"
+            android:layout_marginTop="49dp"
+            />
+        <EditText
+
+            android:id="@+id/name_edt_name"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="26dp"
+
+
+            android:layout_marginTop="76dp"
+            android:inputType="textPassword"
+            android:hint="현재 비밀번호를 입력해주세요"
+
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text0"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_text0"
+            android:backgroundTint="#DBDBDB"
+            />
+        <CheckBox
+            android:id="@+id/login_check_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 확인"
+            android:fontFamily="@font/suit_medium"
+            android:button="@drawable/login_checkbox"
+            app:layout_constraintTop_toBottomOf="@+id/name_edt_name"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_text0"
+            android:paddingStart="8dp"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="0dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color1"
+            android:background="@drawable/button_round"
+            android:text="완료"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="26dp"
+
+            android:layout_marginVertical="16dp"
+            android:src="@drawable/button_round"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

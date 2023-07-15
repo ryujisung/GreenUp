@@ -4,7 +4,7 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.fragment.findNavController
 import com.example.greenup.R
-import com.example.portplay.base.BaseFragment
+import com.example.greenup.ui.base.BaseFragment
 
 abstract class SignUpFragment<D : ViewDataBinding>(
     @LayoutRes

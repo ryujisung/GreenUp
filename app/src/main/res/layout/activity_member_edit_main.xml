@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="nickname"
+            type="String" />
+
+        <variable
+            name="email"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.my.meberedit.MemberEditMainActivity">
+
+        <ImageView
+            android:id="@+id/main_img_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="22dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_txt_text0"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="22dp"
+            android:text="회원 정보 수정"
+            app:layout_constraintTop_toBottomOf="@+id/main_img_previous"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일"
+            android:textColor="#5D6760"
+            android:textSize="16sp"
+            android:id="@+id/text0"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text0"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_text0"
+            android:layout_marginTop="40dp"
+            />
+        <TextView
+            android:id="@+id/email1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={email}"
+            app:layout_constraintTop_toTopOf="@id/text0"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="48dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:textColor="#5D6760"
+            android:textSize="16sp"
+            android:id="@+id/text1"
+            app:layout_constraintTop_toBottomOf="@+id/text0"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_text0"
+            android:layout_marginTop="40dp"
+            />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={nickname}"
+            app:layout_constraintTop_toTopOf="@id/text1"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="48dp"
+            />
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrowgo"
+            app:layout_constraintTop_toTopOf="@id/text1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/text1"
+            android:layout_marginEnd="21dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -10,15 +10,58 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.my.NotiActivity">
+        tools:context=".ui.my.noti.NotiActivity">
 
-        <Switch
+        <ImageView
+            android:id="@+id/main_img_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="22dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_txt_text0"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="22dp"
+            android:text="알림설정"
+            app:layout_constraintTop_toBottomOf="@+id/main_img_previous"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/my_txt_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "알림 끄기"
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text0"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_text0"
+            android:textSize="16sp"
+            android:layout_marginTop="40dp"
+            />
+        <TextView
+            android:id="@+id/my_txt_text2"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:text="최근 올라온 글, 공지사항 등에 대한 알림을 받을 수 있어요."
+            app:layout_constraintTop_toBottomOf="@+id/my_txt_text1"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/my_txt_text1"
+            android:textColor="#5D6760"
+
+            />
+        <Switch
+            app:layout_constraintTop_toTopOf="@+id/my_txt_text1"
+            app:layout_constraintBottom_toBottomOf="@+id/my_txt_text2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="23dp"
             android:id="@+id/noti_switch_noti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="알림 끄기"
             android:checked="false" />
 
 

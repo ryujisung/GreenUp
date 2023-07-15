@@ -1,7 +1,6 @@
-package com.example.portplay.base
+package com.example.greenup.ui.base
 
 import android.os.Bundle
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity

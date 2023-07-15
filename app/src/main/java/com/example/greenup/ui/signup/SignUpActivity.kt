@@ -12,9 +12,9 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.greenup.R
 import com.example.greenup.databinding.ActivitySignUpBinding
+import com.example.greenup.ui.base.BaseActivity
 import com.example.greenup.ui.main.MainActivity
 import com.example.greenup.utils.State
-import com.example.portplay.base.BaseActivity
 import com.google.firebase.FirebaseApp
 
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up){
