@@ -76,7 +76,7 @@ class ReMoreActivity : AppCompatActivity() {
                     val title = data["title"] as String
                     val context = data["context"] as String
 
-                    datas.add(MoreData(title,context))
+                    datas.add(MoreData(title,context.replace("newline", " ").replace("newcontext", " ")))
                     ecoAdapter.datas = datas
                     ecoAdapter.notifyDataSetChanged()
                 }
