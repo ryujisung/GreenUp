@@ -6,10 +6,9 @@ import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import com.example.greenup.R
 import com.example.greenup.databinding.ActivityMainBinding
-import com.example.greenup.databinding.ActivityMyMainBinding
 import com.example.greenup.ui.base.BaseActivity
 import com.example.greenup.ui.my.MyMainActivity
-import com.example.greenup.ui.my.noti.Noti3Activity
+import com.example.greenup.ui.mainnoti.Noti3Activity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main){
     override fun onCreate(savedInstanceState: Bundle?) {

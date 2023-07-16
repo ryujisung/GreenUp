@@ -1,5 +1,6 @@
 package com.example.greenup.ui.main
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import com.example.greenup.R
 import com.example.greenup.model.remote.FoodImgData
 import com.example.greenup.model.remote.FoodInfoNomalService
 import com.example.greenup.model.remote.NS2
+import com.example.greenup.ui.mark.MarkActivity
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.*
@@ -49,7 +51,16 @@ class FoodSearchResultActivity : AppCompatActivity() {
         foodIdTextView.text = foodId
         foodKindTextView.text = foodKind
         foodCategoryTextView.text = foodCategory
-
+        findViewById<TextView>(R.id.text4).setOnClickListener {
+            val intent = Intent(this, MarkActivity::class.java).apply {
+                putExtra("foodName", foodName)
+                putExtra("foodCompany", foodCompany)
+                putExtra("foodCategory", foodCategory)
+                putExtra("foodId", foodKind)
+                putExtra("foodKind", foodId)
+            }
+            startActivityForResult(intent, 1) // 1 is the request code
+        }
         /*
         var cmpny_nm = ""
         var prdt_nm = ""
@@ -206,7 +217,6 @@ class FoodSearchResultActivity : AppCompatActivity() {
         //foodConRes가 공백인 경유 "없음" 으로 설
         if (foodConResponses.isEmpty()) {
             //텍스트 색상 지정
-            resultTextView.setTextColor(Color.parseColor("#000000"))
             resultTextView.text = "없음"
         }
 

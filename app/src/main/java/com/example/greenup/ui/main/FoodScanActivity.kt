@@ -85,7 +85,7 @@ class FoodScanActivity : AppCompatActivity() {
                 }
                 LOADING -> {}
                 FAIL -> {
-                    Toast.makeText(this, "음식 추가에 실패했습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "바코드를 다시 인식해주세요", Toast.LENGTH_SHORT).show()
                 }
             }
         }
