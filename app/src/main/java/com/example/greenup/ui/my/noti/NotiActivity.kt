@@ -25,8 +25,8 @@ class NotiActivity : BaseActivity<ActivityNotiBinding>(R.layout.activity_noti){
         }
         val notificationEnabled = isNotificationEnabled()
         notificationSwitch.isChecked = notificationEnabled
-        val binding = DataBindingUtil.setContentView<ActivityNoti2Binding>(this,
-            R.layout.activity_noti2
+        val binding = DataBindingUtil.setContentView<ActivityNotiBinding>(this,
+            R.layout.activity_noti
         )
         binding.mainImgPrevious.setOnClickListener {
             var intent = Intent(this, MyMainActivity::class.java)
