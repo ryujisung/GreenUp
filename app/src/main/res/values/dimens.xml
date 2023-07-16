@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="item_spacing">10dp</dimen>
+    <dimen name="mark_item_spacing">15dp</dimen>
+</resources>

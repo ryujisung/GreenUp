@@ -10,6 +10,10 @@ import com.example.greenup.databinding.ActivityMainBinding
 import com.example.greenup.ui.base.BaseActivity
 import com.example.greenup.ui.my.MyMainActivity
 import com.example.greenup.ui.mainnoti.Noti3Activity
+import com.example.greenup.ui.moreeco.EcoMoreActivity
+import com.example.greenup.ui.moreeco.EcoMoreMoreActivity
+import com.example.greenup.ui.morerecycle.ReMoreActivity
+import com.example.greenup.ui.morerecycle.ReMoreMoreActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +38,50 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main){
         binding.mainImgQr.setOnClickListener {
             var intent = Intent(this, FoodScanActivity::class.java)
             startActivity(intent)
+        }
+        binding.mainTxtRecycle.setOnClickListener {
+            var intent = Intent(this, ReMoreActivity::class.java)
+            startActivity(intent)
+        }
+        binding.mainTxtEco.setOnClickListener {
+            var intent = Intent(this, EcoMoreActivity::class.java)
+            startActivity(intent)
+        }
+        binding.mainImgEco.setOnClickListener {
+            var intent = Intent(this, EcoMoreMoreActivity::class.java)
+            intent.putExtra("title","‘지구를 위한다는 착각’이라는 착각")
+            startActivity(intent)
 
+
+        }
+        binding.mainImgRecycle.setOnClickListener {
+            var intent = Intent(this, ReMoreMoreActivity::class.java)
+            intent.putExtra("title","귤껍질은 일반쓰레기인가")
+            startActivity(intent)
+        }
+        binding.mainImgEco1.setOnClickListener {
+            var intent = Intent(this, EcoMoreMoreActivity::class.java)
+            intent.putExtra("title","‘지구를 위한다는 착각’이라는 착각")
+            startActivity(intent)
+
+
+        }
+        binding.mainImgRecycle1.setOnClickListener {
+            var intent = Intent(this, ReMoreMoreActivity::class.java)
+            intent.putExtra("title","귤껍질은 일반쓰레기인가")
+            startActivity(intent)
+        }
+        binding.mainImgEco2.setOnClickListener {
+            var intent = Intent(this, EcoMoreMoreActivity::class.java)
+            intent.putExtra("title","‘지구를 위한다는 착각’이라는 착각")
+            startActivity(intent)
+
+
+        }
+        binding.mainImgRecycle2.setOnClickListener {
+            var intent = Intent(this, ReMoreMoreActivity::class.java)
+            intent.putExtra("title","귤껍질은 일반쓰레기인가")
+            startActivity(intent)
         }
 
         val main_dt_search = findViewById<EditText>(R.id.main_dt_search)
