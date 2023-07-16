@@ -46,8 +46,7 @@ class EcoMoreMoreActivity : AppCompatActivity() {
                     if(a == title){
                         binding.title = a
                         binding.day = b
-                        binding.context = c
-
+                        binding.context = c.replace("newline", "\n").replace("newcontext", "\n\n")
                     }
                 }
 
