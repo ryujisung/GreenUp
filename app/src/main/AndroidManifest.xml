@@ -39,6 +39,9 @@
         <activity
             android:name=".ui.main.FoodSearchResultActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.main.FoodSearchActivity"
+            android:exported="false" />
 
         <service
             android:name=".ui.my.MyFirebaseMessagingService"
