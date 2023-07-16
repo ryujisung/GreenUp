@@ -16,9 +16,6 @@
         android:theme="@style/Theme.GreenUp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.main.FoodScanActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.mark.MarkActivity"
             android:exported="false" />
         <activity
@@ -67,7 +64,7 @@
             android:name=".ui.viewpager.ViewPagerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.FoodSearchActivity"
+            android:name=".ui.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -76,10 +73,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.IntroActivity"
-            android:exported="false" />
+            android:name=".ui.main.FoodScanActivity"
+            android:exported="false"></activity>
         <activity
             android:name=".ui.main.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.moreeco.EcoMoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.moreeco.EcoMoreMoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.morerecycle.ReMoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.morerecycle.ReMoreMoreActivity"
             android:exported="false" />
     </application>
 

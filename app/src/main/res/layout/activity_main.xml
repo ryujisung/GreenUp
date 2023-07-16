@@ -95,13 +95,15 @@
                 android:src="@drawable/main_img1" />
 
             <TextView
+                android:id="@+id/main_img_recycle1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="귤 껍질은 일반? 음식물?"
+                android:text="귤껍질은 일반쓰레기인가"
                 android:textSize="16sp"
                 android:layout_marginTop="15dp" />
 
             <TextView
+                android:id="@+id/main_img_recycle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="귤, 바나나, 사과 등의 껍질과 딸기, 토마토 등의 꼭지는 상대적으로 부드러워 가축이 먹을 수 있기 때문에..."
@@ -145,6 +147,7 @@
                 android:src="@drawable/main_img2" />
 
             <TextView
+                android:id="@+id/main_img_eco1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="‘지구를 위한다는 착각’이라는 착각"
@@ -152,6 +155,7 @@
                 android:layout_marginTop="15dp" />
 
             <TextView
+                android:id="@+id/main_img_eco2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이 책은 환경문제에 관한 우리의 오해를 지적하며 현재 환경담론의 오류를 고발한다."

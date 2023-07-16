@@ -38,7 +38,7 @@ class Noti3Activity : AppCompatActivity() {
         recyclerView.adapter = notiAdapter
 
         val datas = mutableListOf<NotiData>()
-        datas.add(NotiData(R.drawable.emoji_objects, "오늘의 재활용 팁", "1시간전", "오렌지 껍질은 일반 쓰레기이다."))
+        datas.add(NotiData(R.drawable.emoji_objects, "오늘의 재활용 팁", "방금전", "오렌지 껍질은 일반 쓰레기이다."))
 
         notiAdapter.datas = datas
         notiAdapter.notifyDataSetChanged()
