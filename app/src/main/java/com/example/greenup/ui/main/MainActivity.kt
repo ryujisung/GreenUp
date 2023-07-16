@@ -2,6 +2,7 @@ package com.example.greenup.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import com.example.greenup.R
@@ -34,6 +35,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main){
             var intent = Intent(this, FoodScanActivity::class.java)
             startActivity(intent)
 
+        }
+
+        val main_dt_search = findViewById<EditText>(R.id.main_dt_search)
+        main_dt_search.setOnClickListener {
+            var intent = Intent(this, FoodSearchActivity::class.java)
+            startActivity(intent)
         }
 
     }
