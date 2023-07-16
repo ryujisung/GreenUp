@@ -27,14 +27,13 @@ class FoodSearchResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_food_search_result)
+
         val foodImgView = findViewById<ImageView>(R.id.FoodImgView)
         val resultTextView = findViewById<TextView>(R.id.ResultTextView)
         val foodNameTextView = findViewById<TextView>(R.id.FoodNameTV)
         val foodIdTextView = findViewById<TextView>(R.id.FoodIdTV)
         val foodKindTextView = findViewById<TextView>(R.id.FoodKindTV)
         val foodCategoryTextView = findViewById<TextView>(R.id.FoodCategoryNameTV)
-
-
 
         var imgUrl = "https://www.consumer.go.kr/openapi/contents/image/00000463/1.jpg"
 
