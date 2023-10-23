@@ -37,7 +37,7 @@ class FoodSearchActivity : AppCompatActivity() {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://52.195.176.143/")
+            .baseUrl("http://218.144.111.204:2222")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

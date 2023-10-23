@@ -174,13 +174,13 @@ class FoodSearchResultActivity : AppCompatActivity() {
         }
 
         //인증 결과 검색을 위해 음식 이름 앞 5글자만 자르기
-        val foodName2 = foodName?.substring(0, 5)
+        val foodName2 = foodName?.substring(0,3)
 
 
         for (i in 2..15) { // Adjust this range as needed
             val url = "${i.toString().padStart(2, '0')}"
             //Log.d("url", url)
-            val call = service2.getApiResponses(url, "QHGSAHDGCP", 1, 100, foodName2.toString())
+            val call = service2.getApiResponses(url, "OIG0II7KSS", 1, 100, foodName2.toString())
 
             call!!.enqueue(object : Callback<NS2> {
                 override fun onResponse(call: Call<NS2>, response: Response<NS2>) {
